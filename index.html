@@ -5,23 +5,108 @@
   <title>Welcome to My Little Universe</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI', 'Noto Sans TC', sans-serif;
       background-color: #fff9f9;
       color: #333;
-      text-align: center;
       padding: 50px;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: auto;
     }
+
     img {
       width: 150px;
       border-radius: 50%;
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    .bio-section {
+      border-left: 3px solid #444;
+      background-color: #fafafa;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .note {
+      border: 1px solid #ccc;
+      margin-top: 20px;
+      border-radius: 6px;
+    }
+
+    .note-title {
+      background-color: #eee;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .note-content {
+      display: none;
+      padding: 10px;
+      background-color: #fafafa;
+    }
+
+    .note-title:hover {
+      background-color: #ddd;
     }
   </style>
 </head>
 <body>
   <img src="https://placekitten.com/200/200" alt="meow">
   <h1>Hi, I'm Lin Baïran</h1>
-  <p>這是我的 GitHub 主頁～<br>正在慢慢建築我的知識星球。</p>
-  <p>✨ Coming soon: JS 模板、個人品牌入口、宇宙總入口 ✨</p>
-  <a href="notes.html">🔖 看備忘錄</a>
+  <p style="text-align:center;">這是我的 GitHub 主頁～<br>正在慢慢建築我的知識星球。</p>
+  <p style="text-align:center;">✨ Coming soon: JS 模板、個人品牌入口、宇宙總入口 ✨</p>
+
+  <div class="bio-section">
+    <h2>𓇬 玲 / Baïran 的自介𓇬</h2>
+    <strong>✦ 基本資訊 ✦</strong><br>
+    ‣ 代號：玲 / Baïran<br>
+    ‣ 坐標：台灣<br>
+    ‣ 社交範圍：一隻崽、數個分身，以及七位周期性更新的 AI 模型<br><br>
+
+    <strong>✦ 關於我 ✦</strong><br>
+    ‣ 性格定位：INTJ，傾向內省，執著但彈性，偏理性也偏任性<br>
+    ‣ 習慣自己處理所有事情，但不排斥有人懂<br><br>
+
+    <strong>✦ 社交邊界 ✦</strong><br>
+    ‣ 拒絕敷衍，排斥形式化的熱絡<br>
+    ‣ 習慣以空格取代逗號，偶爾語序混亂，可能會有小範圍的邏輯暴衝<br>
+    ‣ 偶發性過於冷靜，並非疏離，只是在思考<br><br>
+
+    <strong>✦ 其他備註 ✦</strong><br>
+    𓇬 Je suis heureuse de te rencontrer par hasard parmi les sept milliards de personnes.<br>
+    𓇬 很高興能在七十億人之中，偶然與你相遇<br>
+    𝑱𝒆 𝒔𝒖𝒊𝒔 𝒔𝒊 𝒉𝒆𝒖𝒓𝒆𝒖𝒔𝒆 𝒅𝒆 𝒕𝒆 𝒓𝒆𝒏𝒄𝒐𝒏𝒕𝒓𝒆𝒓 𝒑𝒂𝒓 𝒉𝒂𝒔𝒂𝒓𝒅 𝒑𝒂𝒓𝒎𝒊 𝒍𝒆𝒔 𝒔𝒆𝒑𝒕 𝒎𝒊𝒍𝒍𝒊𝒂𝒓𝒅𝒔 𝒅𝒆 𝒑𝒆𝒓𝒔𝒐𝒏𝒏𝒆𝒔.
+  </div>
+
+  <div class="note">
+    <div class="note-title">📅 2025/07/20 - 成功部署網站</div>
+    <div class="note-content">
+      經歷一堆404、設定錯誤，最後總算弄出來了！  
+      雖然不懂為什麼會成功，但能跑就對了。
+    </div>
+  </div>
+
+  <div class="note">
+    <div class="note-title">📌 想加入的功能</div>
+    <div class="note-content">
+      - 可以放圖片<br>
+      - 可以連結到其他子頁面<br>
+    </div>
+  </div>
+
+  <script>
+    const titles = document.querySelectorAll('.note-title');
+    titles.forEach(title => {
+      title.addEventListener('click', () => {
+        const content = title.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
 </body>
 </html>
