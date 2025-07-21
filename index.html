@@ -135,7 +135,30 @@
       </div>
     </div>
   </div>
+<div class="note">
+  <div class="note-title">📚 書單推薦 / My Bookshelf</div>
+  <div class="note-content">
+    <div class="book-grid">
+      <!-- 書本 1 -->
+      <div class="book-card">
+        <img src="images/klara.jpg" alt="克拉拉與太陽">
+        <div class="book-info">
+          <div class="book-title">克拉拉與太陽</div>
+          <div class="book-comment">一本很安靜也很殘酷的書。像用棉花刺穿你。</div>
+        </div>
+      </div>
 
+      <!-- 書本 2 -->
+      <div class="book-card">
+        <img src="images/1984.jpg" alt="一九八四">
+        <div class="book-info">
+          <div class="book-title">一九八四</div>
+          <div class="book-comment">對極權社會的凝視，冷靜到讓人起雞皮疙瘩。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   <div id="clock"></div>
 
   <script>
@@ -162,5 +185,47 @@
       });
     });
   </script>
+  .book-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.book-card {
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+.book-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.book-info {
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.book-title {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 6px;
+}
+
+.book-comment {
+  font-size: 0.9em;
+  color: #666;
+}
 </body>
 </html>
