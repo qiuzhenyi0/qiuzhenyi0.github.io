@@ -56,7 +56,7 @@
   </style>
 </head>
 <body>
- 
+ <div id="clock" style="font-size: 1.2em; margin-top: 20px; color: #555;"></div>
 <img src="IMG_7174.jpeg" alt="頭像" class="profile">
   <h1>Hi, I'm Lin Baïran</h1>
   <p style="text-align:center;">這是我的 GitHub 主頁～<br>正在慢慢建築我的知識星球。</p>
@@ -124,6 +124,22 @@
   </div>
 </div>
   <script>
+  <script>
+  function updateClock() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const hour = String(now.getHours()).padStart(2, '0');
+    const minute = String(now.getMinutes()).padStart(2, '0');
+    const second = String(now.getSeconds()).padStart(2, '0');
+    const formattedTime = `${year}/${month}/${day} ${hour}:${minute}:${second}`;
+    document.getElementById('clock').textContent = `🕒 現在時間：${formattedTime}`;
+  }
+
+  setInterval(updateClock, 1000); // 每秒更新
+  updateClock(); // 頁面一載入先顯示一次
+</script>
     const titles = document.querySelectorAll('.note-title');
     titles.forEach(title => {
       title.addEventListener('click', () => {
