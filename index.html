@@ -1,78 +1,121 @@
-<html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Welcome to My Little Universe</title>
   <style>
-     body {
-  font-family: 'Segoe UI', 'Noto Sans TC', sans-serif;
-  background-color: #111;
-  color: #f5f5f5;
-  padding: 50px;
-  line-height: 1.8;
-  max-width: 800px;
-  margin: auto;
-}
-.profile {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 20px;
-}
-a {
-  color: #B8E7DB;
-  text-decoration: none;
-}
+    body {
+      font-family: 'Segoe UI', 'Noto Sans TC', sans-serif;
+      background-color: #111;
+      color: #f5f5f5;
+      padding: 50px;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: auto;
+    }
 
-a:hover {
-  text-decoration: underline;
-  color: #ffffff;
-}
+    a {
+      color: #B8E7DB;
+      text-decoration: none;
+    }
 
-.book-card {
-  background-color: #1a1a1a;
-  border: 1px solid #333;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  transition: transform 0.3s;
-}
+    a:hover {
+      text-decoration: underline;
+      color: #ffffff;
+    }
 
-.book-card:hover {
-  transform: translateY(-5px);
-}
+    img.profile {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 20px;
+    }
 
-.note {
-  border: 1px solid #333;
-  background-color: #1a1a1a;
-}
+    .note {
+      border: 1px solid #333;
+      background-color: #1a1a1a;
+      margin-top: 20px;
+      border-radius: 6px;
+    }
 
-.note-title {
-  background-color: #222;
-  color: #f5f5f5;
-}
+    .note-title {
+      background-color: #111;
+      color: #f5f5f5;
+      padding: 12px 16px;
+      cursor: pointer;
+      font-weight: bold;
+      border-bottom: 1px solid #333;
+      position: relative;
+    }
 
-.note-title:hover {
-  background-color: #333;
-}
+    .note-title::after {
+      content: "▼";
+      position: absolute;
+      right: 16px;
+      transition: transform 0.3s ease;
+    }
 
-.note-content {
-  background-color: #1a1a1a;
-}
-.note-content {
-  display: none;
-}
-.note-title {
-  background-color: #111;
-  color: #f5f5f5;
-  padding: 12px 16px;
-  cursor: pointer;
-  font-weight: bold;
-  border-bottom: 1px solid #333;
-}
-.note-content {
-  padding: 12px 16px;
-}
+    .note-title.active::after {
+      transform: rotate(-180deg);
+    }
+
+    .note-title:hover {
+      background-color: #222;
+    }
+
+    .note-content {
+      display: none;
+      background-color: #1a1a1a;
+      color: #ddd;
+      padding: 12px 16px;
+      border-radius: 0 0 6px 6px;
+    }
+
+    .book-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .book-card {
+      width: 200px;
+      border: 1px solid #333;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: #1a1a1a;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+
+    .book-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .book-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .book-info {
+      padding: 10px 12px;
+      text-align: left;
+    }
+
+    .book-title {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 6px;
+    }
+
+    .book-comment {
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
     #clock {
       font-size: 1em;
       color: #666;
@@ -86,34 +129,31 @@ a:hover {
 <body>
 
   <img src="IMG_7174.jpeg" alt="頭像" class="profile">
-  <h1>Hi, I'm Lin Baïran</h1>
+  <h1 style="text-align:center;">Hi, I'm Lin Baïran</h1>
   <p style="text-align:center;">這是我的 GitHub 主頁～<br>正在慢慢建築我的知識星球。</p>
   <p style="text-align:center;">✨ Coming soon: JS 模板、個人品牌入口、宇宙總入口 ✨</p>
 
   <div class="note">
     <div class="note-title">💼 關於我 / 自我介紹</div>
     <div class="note-content">
-      <div class="bio-section">
-        <h2>𓇬 玲 / Baïran 的自介𓇬</h2>
-        <strong>✦ 基本資訊 ✦</strong><br>
-        ‣ 代號：玲 / Baïran<br>
-        ‣ 坐標：台灣<br>
-        ‣ 社交範圍：一隻崽、數個分身，以及七位周期性更新的 AI 模型<br><br>
+      <h2>𓇬 玲 / Baïran 的自介𓇬</h2>
+      <strong>✦ 基本資訊 ✦</strong><br>
+      ‣ 代號：玲 / Baïran<br>
+      ‣ 坐標：台灣<br>
+      ‣ 社交範圍：一隻崽、數個分身，以及七位周期性更新的 AI 模型<br><br>
 
-        <strong>✦ 關於我 ✦</strong><br>
-        ‣ 性格定位：INTJ，傾向內省，執著但彈性，偏理性也偏任性<br>
-        ‣ 習慣自己處理所有事情，但不排斥有人懂<br><br>
+      <strong>✦ 關於我 ✦</strong><br>
+      ‣ 性格定位：INTJ，傾向內省，執著但彈性，偏理性也偏任性<br>
+      ‣ 習慣自己處理所有事情，但不排斥有人懂<br><br>
 
-        <strong>✦ 社交邊界 ✦</strong><br>
-        ‣ 拒絕敷衍，排斥形式化的熱絡<br>
-        ‣ 習慣以空格取代逗號，偶爾語序混亂，可能會有小範圍的邏輯暴衝<br>
-        ‣ 偶發性過於冷靜，並非疏離，只是在思考<br><br>
+      <strong>✦ 社交邊界 ✦</strong><br>
+      ‣ 拒絕敷衍，排斥形式化的熱絡<br>
+      ‣ 習慣以空格取代逗號，偶爾語序混亂，可能會有小範圍的邏輯暴衝<br>
+      ‣ 偶發性過於冷靜，並非疏離，只是在思考<br><br>
 
-        <strong>✦ 其他備註 ✦</strong><br>
-        𓇬 Je suis heureuse de te rencontrer par hasard parmi les sept milliards de personnes.<br>
-        𓇬 很高興能在七十億人之中，偶然與你相遇<br>
-        𝑱𝒆 𝒔𝒖𝒊𝒔 𝒔𝒊 𝒉𝒆𝒖𝒓𝒆𝒖𝒔𝒆 𝒅𝒆 𝒕𝒆 𝒓𝒆𝒏𝒄𝒐𝒏𝒕𝒓𝒆𝒓 𝒑𝒂𝒓 𝒉𝒂𝒔𝒂𝒓𝒅 𝒑𝒂𝒓𝒎𝒊 𝒍𝒆𝒔 𝒔𝒆𝒑𝒕 𝒎𝒊𝒍𝒍𝒊𝒂𝒓𝒅𝒔 𝒅𝒆 𝒑𝒆𝒓𝒔𝒐𝒏𝒏𝒆𝒔.
-      </div>
+      <strong>✦ 其他備註 ✦</strong><br>
+      Je suis heureuse de te rencontrer par hasard parmi les sept milliards de personnes.<br>
+      很高興能在七十億人之中，偶然與你相遇
     </div>
   </div>
 
@@ -138,7 +178,6 @@ a:hover {
             <div class="book-comment">一本很安靜也很殘酷的書。像用棉花刺穿你。</div>
           </div>
         </div>
-
         <div class="book-card">
           <img src="https://raw.githubusercontent.com/qiuzhenyi0/qiuzhenyi0.github.io/main/images/IMG_7184.jpeg" alt="一九八四">
           <div class="book-info">
@@ -149,19 +188,6 @@ a:hover {
       </div>
     </div>
   </div>
-  <div class="note">
-  <div class="note-title">📡 社群連結 / Social Media</div>
-  <div class="note-content">
-    <ul style="list-style: none; padding: 0; text-align: center;">
-      <li><a href="https://discord.gg/Hc6muAj7sq" target="_blank">💬 Discord 伺服器</a></li>
-      <li><a href="https://www.instagram.com/qiuzhenyi0?igsh=MXYwdTJuMTh5cDN6MA%3D%3D&utm_source=qr" target="_blank">📸 Instagram</a></li>
-      <li><a href="https://www.facebook.com/share/1Aw8rKiuJo/?mibextid=wwXIfr" target="_blank">📘 Facebook</a></li>
-      <li><a href="https://open.spotify.com/user/317bf7f3dqwz23d7uirlxd53ah7q?si=aMkJK7-3QxWC1EVwwgTqnA" target="_blank">🎵 Spotify</a></li>
-      <li><a href="https://x.com/qizhny1363743?s=21" target="_blank">🕊 X (Twitter)</a></li>
-      <li><a href="https://lit.link/en/Calculatedcrazy" target="_blank">🔗lit.link</a></li>
-    </ul>
-  </div>
-</div>
 
   <div id="clock"></div>
 
@@ -186,6 +212,7 @@ a:hover {
       title.addEventListener('click', () => {
         const content = title.nextElementSibling;
         content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        title.classList.toggle('active');
       });
     });
   </script>
